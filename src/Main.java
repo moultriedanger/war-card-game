@@ -13,10 +13,9 @@ public class Main {
 //        d.addCard(c2);
 //        d.addCard(c3);
 //        d.addCard(c4);
-          ArrayList<Card> d = new ArrayList<>();
-          Deck mainDeck = new Deck(d);
+          Deck d = new Deck();
+          d.showContents();
+          System.out.println(d.customSize());
 
-        System.out.println(mainDeck.customSize());
-        mainDeck.showContents();
     }
 }

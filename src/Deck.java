@@ -1,18 +1,18 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Deck {
 
-    ArrayList<Card> deck = new ArrayList<>();
+    private ArrayList<Card> deck;
 
     List<String> suits = Arrays.asList("Club", "Diamond", "Heart", "Spade");
     List<String> faceCards = Arrays.asList("Jack", "Queen", "King", "Ace");
     List<String> ranks = Arrays.asList("2","3","4","5","6","7","8","9","10");
 
-    public Deck(ArrayList<Card> deck) {
-
-        this.deck = populateDeck(deck);
+    public Deck() {
+        this.deck = populateDeck();
     }
 
     public void addCard(Card card){
@@ -25,7 +25,11 @@ public class Deck {
         }
     }
 
-    private ArrayList<Card> populateDeck(ArrayList<Card> deck){
+    private ArrayList<Card> populateDeck(){
+
+        //create and initalize an empty deck
+        ArrayList<Card> deck = new ArrayList<>();
+
         for (String suit: suits){
             for (String faceCard: faceCards){
                 deck.add(new Card(faceCard, suit));
@@ -37,6 +41,13 @@ public class Deck {
         return deck;
     }
 
+//    public Deck shuffleDeck(Deck d){
+//
+//        return d(1,5);
+//
+//    }
+
+
     public int customSize(){
         int count = 0;
 
@@ -45,4 +56,5 @@ public class Deck {
         }
         return count;
     }
+
 }
